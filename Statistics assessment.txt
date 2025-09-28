@@ -1,0 +1,10 @@
+Question 1. Analyze the below data and tell whether you can conclude that smoking causes
+cancer or not?
+
+
+Category    Diagnosed as Cancer     Without Cancer    Total
+Smokers        220                         230         450
+Non-Smokers    350                         640         990
+Total          570                         870         1440
+
+Yes smokers causes cancer.
