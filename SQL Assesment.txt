@@ -1,0 +1,87 @@
+mysql> Create database try;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Use try;
+Database changed
+
+mysql> Create Table Employees(Employee_id int primary key auto_increment,name varchar(100),position varchar(100),salary decimal(10,2),hire_date date);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> Describe Employees;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| Employee_id | int           | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(100)  | YES  |     | NULL    |                |
+| position    | varchar(100)  | YES  |     | NULL    |                |
+| salary      | decimal(10,2) | YES  |     | NULL    |                |
+| hire_date   | date          | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> Create Table Employee_audit(audit_id int primary key auto_increment,Employee_id int,name varchar(100),position varchar(100),salary decimal(10,2),hire_date date,action_date timestamp default current_timestamp);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> Describe Employee_audit;
++-------------+---------------+------+-----+-------------------+-------------------+
+| Field       | Type          | Null | Key | Default           | Extra             |
++-------------+---------------+------+-----+-------------------+-------------------+
+| audit_id    | int           | NO   | PRI | NULL              | auto_increment    |
+| Employee_id | int           | YES  |     | NULL              |                   |
+| name        | varchar(100)  | YES  |     | NULL              |                   |
+| position    | varchar(100)  | YES  |     | NULL              |                   |
+| salary      | decimal(10,2) | YES  |     | NULL              |                   |
+| hire_date   | date          | YES  |     | NULL              |                   |
+| action_date | timestamp     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++-------------+---------------+------+-----+-------------------+-------------------+
+7 rows in set (0.00 sec)
+
+mysql>  Insert into Employees (name,position,salary,hire_date) VALUES
+    ->  ('John Doe','Software Engineer', 80000.00, '2022-01-15'),
+    -> ('Jane Smith', 'Project Manager', 90000.00, '2021-05-22'),
+    -> ('Alice Johnson', 'UX Designer', 75000.00, '2023-03-01');
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> Select * from Employees;
++-------------+---------------+-------------------+----------+------------+
+| Employee_id | name          | position          | salary   | hire_date  |
++-------------+---------------+-------------------+----------+------------+
+|           1 | John Doe      | Software Engineer | 80000.00 | 2022-01-15 |
+|           2 | Jane Smith    | Project Manager   | 90000.00 | 2021-05-22 |
+|           3 | Alice Johnson | UX Designer       | 75000.00 | 2023-03-01 |
++-------------+---------------+-------------------+----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> Delimiter //
+mysql> Create Trigger Employees_ai after insert on Employees
+    -> For each row
+    -> Begin
+    -> insert into Employee_audit (employee_id,name,position,salary,hire_date)
+    -> Values(New.employee_id,New.name,New.position,New.salary,New.hire_date);
+    -> end;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> Delimiter ;
+mysql> Insert into Employees Values (4,"Ramesh","Data Analyst",100000,"2023-07-09");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Select * from Employee_audit;
++----------+-------------+--------+--------------+-----------+------------+---------------------+
+| audit_id | Employee_id | name   | position     | salary    | hire_date  | action_date         |
++----------+-------------+--------+--------------+-----------+------------+---------------------+
+|        1 |           4 | Ramesh | Data Analyst | 100000.00 | 2023-07-09 | 2025-07-30 13:20:05 |
++----------+-------------+--------+--------------+-----------+------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> Select * from Employees;
++-------------+---------------+-------------------+-----------+------------+
+| Employee_id | name          | position          | salary    | hire_date  |
++-------------+---------------+-------------------+-----------+------------+
+|           1 | John Doe      | Software Engineer |  80000.00 | 2022-01-15 |
+|           2 | Jane Smith    | Project Manager   |  90000.00 | 2021-05-22 |
+|           3 | Alice Johnson | UX Designer       |  75000.00 | 2023-03-01 |
+|           4 | Ramesh        | Data Analyst      | 100000.00 | 2023-07-09 |
++-------------+---------------+-------------------+-----------+------------+
+4 rows in set (0.00 sec)

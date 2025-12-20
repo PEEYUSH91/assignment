@@ -1,0 +1,135 @@
+1.Descriptive Statistics- Mean, Median, Mode
+2.Sample- A sample is a subset of the population.
+  We study the sample to make inferences (educated guesses) about the population, because studying the whole population is often too time- consuming or expensive.
+
+Types of Descriptive Statistics
+1.Frequency Tables
+2.Measures of Central Tendency
+3.Measures of Variability
+4.Measures of Position
+5.Measures of Shape
+
+Types of Sampling
+1.Simple Random Sampling-
+Example: You have 1000 customers and randomly choose 100 using Excel's RAND() function.
+
+2.Systematic Sampling-
+Example: You have 1000 customers and need 100.Interval= 1000/100= 101000/100=101000/100=10
+Pick every 10th customer from the list after a random start.
+
+3.Stratified Sampling-
+Example: You want opinions from 1000 customers: 60% Male, 40% Female
+
+4.Cluster Sampling-
+Example: You want to survey schools in Gujarat. Divide all schools into clusters by district.
+
+
+Types of Data/Variables
+1.Qualitative (Categorical) Data
+  Describes qualities/categories,not numbers
+  Cannot be measured, only labeled or classified
+Types:
+1.Nominal Data
+Categories with no order
+Just names/labels.
+Examples: Gender(Male/Female),Blood Group(A,B,AB,O),Colors(Red,Blue).
+2.Ordinal Data
+Categories with a meaningful order but the differences are not measurable
+Examples: Rank in class (1st,2nd,3rd), Customer feedback (Poor, Average, Good, Excellent).
+
+2.Quantitative (Numerical) Data
+Represents numbers that can be measured can perform mathematical operations.
+
+Types:
+1.Discrete Data
+  Countable, whole numbers.
+Examples: Number of children in a family, Number of books on a shelf, Dice outcomes(1-6)
+
+2.Continuous Data
+can take any value within a range (decimals, fractions included). Examples: Height, Weight, Time, Temperature
+
+EXERCISE
+Marks in exam (out of 100)- discrete
+Favourite sport(Cricket, Football, Basketball) nominal.
+Ranking in singing competition- ordinal
+Number of siblings- discrete
+Body temperature- continues.
+
+Type of Descriptive Statistics
+Frequency Tables- Frequency Table Histogram
+Measures of Central Tendency- Mean, Median, Mode
+Measures of Variability- Variance, Standard Deviation, MAD, Range.
+Measures of Position- Quartile, Percentile, IQR
+Measures of Shape- Skewness, Kurtosis, Box, Plot, Distribution
+
+Data=[1,2,3,4,5,6]
+Mean= 1+2+3+4+5+6/6=21/6=3.5
+Median= 3+4/2=3.5
+
+
+Data=[3,3,5,4,2,3,3]
+Median= 4
+Mode= 3
+
+Standard Deviation= Variance total Square Root
+Variance= Population
+SURAT     Mean=50(X-X1)   Square
+10        -40             1600
+30        -20              400
+20        -30              900
+100        50             2500
+10        -40             1600
+20        -30              900
+10        -40             1600
+100        50             2500
+100        50             2500
+100        50             2500
+                   Total 17000 
+Variance= Square Total/number of items=17000/10=1700
+Standard Deviation= Variance Square Root
+Standard Deviation= 41.23105626
+
+Discrete Distribution-
+(a)Uniform Distribution-(Discrete)
+All values in a finite set have the same probability P(x)=1/n
+where n= number of possible outcomes Rolling a fair 6-sided die
+Each number(1-6) has a 1/6=16.67% chance
+Use Case: Random assignment in A/B testing, simulations where every outcome is equally likely
+
+(b)Bernoulli Distribution- A binary outcome either success(1) or failure (0) with probability p of success
+RAND() generates a random number between 0 and 1.
+If it's less than 0.3- it's a "success"(1), else "fail"(0)
+
+(c)Geometric Distribution- Number of trials until first success You want to know on which try the first success happens.
+
+(d)Poisson Distribution- Counts number of events in a time frame
+
+Example- If on average you get 4 customer queries per hour, what's the probability of getting 2 in an hour?
+POISSON.DIST(2,4,FALSE)=0.146525111
+
+What is the Gamma Function?
+The Gamma Function is just a fancy version of factorial that also works for decimal numbers.
+
+Number             Factorial(n!)
+1                  
+2                  2*1=2
+3                  3*2*1=6
+4                  4*3*2*1=24
+The Gamma Function is written as:
+     
+    Formula
+GAMMA (5)     (n)
+GAMMA.DIST(2,3,2,TRUE)   (n)=(n-1)!
+This uses the Gamma Distribution, which models: "Time until multiple events happen".
+If you want the time until 1 event, you use Exponential
+If you want time until 3 events, use Gamma (with shape= 3).
+
+What is the probability that the time until the 3rd event (like 3rd customer call) happens within 2 minutes, if each event takes 2 minutes on average? =GAMMA.DIST(2,3,2,TRUE)->0.1804
+
+There is 18.04% chance that all 3 events happen within 2 minutes when each event takes 2 minutes on average
+
+Term       Value   Meaning
+X          2       Check
+Scale      3       Waiting
+TRUE       2       Each
+           Yes     You want

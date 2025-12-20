@@ -1,0 +1,64 @@
+What is Data Analytics ?
+
+Data analytics is the process of examining data to identify patterns, trends, and insights that can be used to make informed decisions and improve business performance. It involves collecting, cleaning, transforming, and analyzing data using various techniques and tools.
+
+Data: Raw Facts: Smallest entity of any information
+Data Scrapping: SQL
+Web  Scrapping: python and their libraries
+Python + SQL
+Data:
+Data Transform:
+Statistics:
+Programming: Python/R
+Data Cleaning:
+Python libraries
+Numpy
+Pandas
+Seaborn
+Matplotlib
+Sklearn
+E: Extract: Python + SQL
+
+What is SQL ?
+Structured Query Language is a domain-specific language used to manage data, especially in a relational database management system (RDBMS). It is particularly useful in handling structured data, i.e., data incorporating relations among entities and variables.
+
+DDL: Data Definition Language: Create, Alter, Drop, Truncate
+
+DML: Data Manipulation Language: Insert, Update, Delete, Call, Explain Call
+
+DCL: Data Control Language: Grant, Revoke
+
+TCL: Transaction Control Language: Commit, Rollback, Savepoints
+
+DQL: Data Query Language: Select
+
+Constraints-
+
+Primary Key: Schema: One field
+Unique Key: Schema: Multiple fields
+Foreign Key: Relationship [between two table, combination of two tables]
+Not Null:
+Default:
+Check: Condition
+
+
+Table: Schema
+Row: Tuple
+Field: Column
+
+Schema:
+Relationship:
+One to One Relationship
+One to Many Relationship
+Many to One Relationship
+Many to Many Relationship
+
+Keys
+Primary Key
+Foreign Key
+Unique Key
+Candidate Key
+Alternate Key
+Super Key
+
+

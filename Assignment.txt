@@ -1,0 +1,124 @@
+Python Programming :
+
+Data Scrapping
+Web Scrapping
+SQL :
+
+Data Collection :
+Data :
+
+Software : install mysql
+
+Relational Database management system
+
+MySQL
+Oracle
+Sql Server
+PostgresSQL
+
+Schema : Database : collection of tables
+
+create database <database-name>;
+
+SQL : Structured Query Language
+
+Table : Row, Column
+Row : Tuple : Record
+Column : Field
+DDL : Data Definition Language : Create, Alter, Drop, Truncate
+DML : Data Manipulation Language : Insert, Update, Delete, Call
+DQL : Data Query Language : Select : show the data
+
+Table : create
+
+Step 1 : create a schema : database
+
+Query : Sql Query
+
+E R Diagram : Entity Relationship Diagram
+
+SDLC : Software Development Life Cycle
+
+Data Flow Diagram
+
+Use Case Diagram
+
+ecomm : schema
+table create :
+Tuple: Record
+Column : Field
+
+Fields :
+Company : string: sequence of characters
+Country : string
+
+Data Types :
+String Data types :
+character :
+
+char(0-30)
+varchar(0-255)
+
+Sql Query :
+
+create table <table-name>
+(columns ..... data types);
+
+drop table <table-name>; this sql query will drop the table permanently
+
+Constraints :
+Primary Key : this will create unique id otherwise it will give error : one table will contain one primary key field
+Foreign Key
+Unique Key : unique key multiple in one table
+Not Null
+Default
+Check
+
+Conditions : where
+
+Operators: Arithmetic, Logical, Relational
+
+mysql> create database ecomm;
+
+mysql> use ecomm;
+
+mysql> create table companies(id int, company char(30), country char (10));
+
+mysql> describe companies;
+
+mysql> insert into companies values(1, "Island Training", "UK");
+
+mysql> select * from companies;
+
+mysql> drop table companies;
+
+mysql> alter table companies add column Continent char (20) not null unique key;
+
+mysql> describe companies;
+
+mysql> select * from companies;
+
+mysql> update companies set Continent = Europe where company_id = 1 ;
+
+mysql> select * from companies;
+
+mysql> insert into companies values(2, "Foundation", "South Africa");
+
+mysql> describe companies;
+
+mysql> select * from companies;
+
+mysql> delete from companies where company_id = 2;
+
+
+
+
+
+
+
+
+
+
+
+
+
