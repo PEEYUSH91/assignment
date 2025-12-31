@@ -1,0 +1,275 @@
+                               Frequency Distribution
+
+What is Frequency Distribution?
+A frequency distribution shows how many times (frequency) each value or class interval appears in a dataset.
+
+                               Correlation Matrix
+
+1. What is Correlation?
+
+Correlation measures the degree and direction of relationship between two quantitative variables.
+
+Shows how one variable changes when another changes
+
+Value ranges from –1 to +1
+
+2. Types of Correlation Values
+Correlation Value	Meaning
++1	Perfect positive correlation
+–1	Perfect negative correlation
+0	No correlation
+0 < r < 1	Positive correlation
+–1 < r < 0	Negative correlation
+
+3. What is a Correlation Matrix?
+
+A correlation matrix is a table that shows correlation coefficients between multiple variables simultaneously.
+
+Example:
+If you have Height, Weight, Age, the matrix shows:
+
+Height vs Weight
+
+Height vs Age
+
+Weight vs Age
+
+4. Correlation Formula (Pearson’s Correlation)
+
+
+r= ​∑(X−Xˉ)(Y−Yˉ)​/
+   ∑(X−Xˉ)2∑(Y−Yˉ)2
+
+                                  Descriptive Statistics
+
+1. What is Descriptive Statistics?
+
+Descriptive statistics is the branch of statistics used to summarize, organize, and describe data using numerical measures and tables.
+
+It helps to:
+
+Understand data behavior
+
+Identify patterns
+
+Compare datasets
+
+2. Types of Descriptive Statistics
+(A) Measures of Central Tendency
+
+Describe the center of the data.
+
+Measure	      Meaning	                  Excel  Formula
+Mean	      Average value	          =AVERAGE(range)
+Median	      Middle value	          =MEDIAN(range)
+Mode	      Most frequent value	  =MODE.SNGL(range)
+
+(B) Measures of Dispersion
+
+Describe the spread of the data.
+
+Measure	                Meaning	                       Excel Formula
+Range	                Max – Min	                       =MAX(range)-MIN(range)
+Variance                Data variability	               =VAR.P() / =VAR.S()
+Standard Deviation	Spread around mean                     =STDEV.P() / =STDEV.S()
+
+(C) Measures of Shape
+
+Describe the distribution pattern.
+
+Measure	        Meaning	                Excel Formula
+Skewness	Symmetry of data	=SKEW(range)
+Kurtosis	Peakedness of data	=KURT(range)
+
+
+Advantages of Descriptive Statistics
+
+Simplifies large data
+
+Easy comparison
+
+Useful for business & research decisions
+
+Limitations
+
+Cannot make predictions
+
+No cause-effect relationship
+
+Limited to given data
+
+                      Normal Distribution Using Excel
+1. What is Normal Distribution?
+
+A normal distribution is a continuous probability distribution that is:
+
+Symmetrical
+
+Bell-shaped
+
+Mean = Median = Mode
+
+It is also called Gaussian Distribution.
+
+2. Properties of Normal Distribution
+
+Bell-shaped curve
+
+Symmetrical about the mean
+
+Mean = Median = Mode
+
+Total area under curve = 1
+
+Defined by two parameters:
+
+Mean (μ)
+
+Standard Deviation (σ)
+
+3. Empirical Rule (68–95–99.7 Rule)
+Range	% of Data
+μ ± 1σ	68%
+μ ± 2σ	95%
+μ ± 3σ	99.7%
+
+5. Normal Distribution Functions in Excel
+Purpose	                        Excel Function
+Probability Density Function	NORM.DIST()
+Cumulative Probability	        NORM.DIST(…, TRUE)
+Z-Score	                        (x – mean) / std dev
+Standard Normal Distribution	NORM.S.DIST()
+Inverse Normal	                NORM.INV()
+Inverse Standard Normal	        NORM.S.INV()
+
+Interpretation
+
+Higher σ → Wider curve
+
+Lower σ → Narrow curve
+
+Higher μ → Curve shifts right
+
+Symmetric distribution indicates normality
+
+Applications of Normal Distribution
+
+Exam marks analysis
+
+Quality control
+
+Finance & risk analysis
+
+Business forecasting
+
+Research studies
+
+Advantages
+
+Simple & well-defined
+
+Used widely in statistics
+
+Good approximation for real-world data
+
+Limitations
+
+Not suitable for skewed data
+
+Sensitive to outliers
+
+Assumes continuous data
+
+
+                               Sample Size Calculator using Excel
+1. What is Sample Size?
+
+Sample size (n) is the number of observations selected from a population to estimate population parameters accurately.
+
+Choosing an appropriate sample size ensures:
+
+Reliable results
+
+Minimum error
+
+Cost-effectiveness
+
+2. Factors Affecting Sample Size
+
+Confidence Level (Z)
+
+Margin of Error (E)
+
+Population Variability
+
+Population Size (N) (if finite)
+
+Type of Study (mean or proportion)
+
+3. Common Confidence Levels & Z-Values
+Confidence Level	    Z-value
+90%	            1.645
+95%	            1.96
+99%	            2.576
+
+4. Sample Size Formula (Population Mean)
+n=(Z×σ​/E)2
+
+Where:
+
+Z = Z-value
+
+σ = Standard deviation
+
+E = Margin of error
+
+5. Sample Size Formula (Population Proportion)
+n=Z2×p×q/
+  E2​
+	​
+Where:
+
+p = estimated proportion
+
+q = 1 − p
+
+(If p unknown, use 0.5)
+
+6. Sample Size with Finite Population Correction (FPC)
+nadj​=n/1+n-1/N
+
+7. Sample Size Calculator using Excel (Mean)
+Example:
+
+Confidence level = 95%
+
+Standard deviation = 10
+
+Margin of error = 2
+
+Excel Formula:
+=(1.96*10/2)^2
+
+
+➡ Sample size = 96
+
+8. Sample Size Calculator using Excel (Proportion)
+Example:
+
+Confidence level = 95%
+
+p = 0.5
+
+Margin of error = 5% (0.05)
+
+Excel Formula:
+=(1.96^2*0.5*0.5)/(0.05^2)
+
+
+➡ Sample size = 384
+
+                          
+
+
+	​
+
